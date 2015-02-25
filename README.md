@@ -114,7 +114,7 @@ for per-request task trigger, you can rewrite reponse body of request, but do no
 > timer callbacks run in the background and their running time will not add to any client request's response time, ... 
 see: http://wiki.nginx.org/HttpLuaModule#ngx.timer.at
 
-## what keys/key generator and how do
+## what's keys/key generator and how do
 ngx_tasks will write shared dictionary with the key/keys. the management include a default generator. but you can do better. there are a example:
 ```lua
 tasks = require('ngx_tasks')
