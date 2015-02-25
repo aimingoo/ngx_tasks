@@ -27,7 +27,7 @@ tasks:run()
 ```lua
 tasks = setmetatable(require('rules'), {
     __index = require('ngx_tasks')
-}
+})
 tasks.dict = 'your_shared_dict_config_in_<nginx.conf>'
 tasks:run()
 ```
@@ -102,7 +102,6 @@ http {
 	lua_shared_dict PreemptionTasks 10M;
     init_worker_by_lua '
         tasks = require('ngx_tasks');
-        -- ngx.timer.at(60, tasks.run, tasks);
     ';
 	# trigger on request's response time
 	rewrite_by_lua '
